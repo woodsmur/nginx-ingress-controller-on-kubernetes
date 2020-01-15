@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: grpc-helloworld-server-service
+  namespace: dev
+  labels:
+    app: grpc-helloworld-server
+spec:
+  type: ClusterIP
+  selector:
+    app: grpc-helloworld-server
+  ports:
+  - port: 50051
+    targetPort: 50051
+    protocol: TCP
